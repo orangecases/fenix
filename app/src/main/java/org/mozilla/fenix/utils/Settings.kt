@@ -250,7 +250,7 @@ class Settings(private val appContext: Context) : PreferencesHolder {
 
     val isMarketingTelemetryEnabled by booleanPreference(
         appContext.getPreferenceKey(R.string.pref_key_marketing_telemetry),
-        default = true
+        default = !Config.channel.isMozillaOnline
     )
 
     var isExperimentationEnabled by booleanPreference(
